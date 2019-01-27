@@ -1,0 +1,244 @@
+
+================
+-- Install Python 3.6.x latest
+================
+Step 1: Open a Terminal and add the repository to your Yum install.
+sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+Step 2: Update Yum to finish adding the repository.
+sudo yum update
+Step 3: Download and install Python.
+This will not only install Python – but it will also install pip to help you with installing add-ons.
+sudo yum install -y python36u python36u-libs python36u-devel python36u-pip
+Once these commands are executed, simply check if the correct version of Python has been installed by executing the following command:
+python3.6 -V
+
+
+===================
+-- Install Jupyter Notebook
+===================
+
+First, ensure that you have the latest pip; older versions may have trouble with some dependencies:
+# pip3.6 install --upgrade pip
+
+Then install the Jupyter Notebook using:
+# pip3.6 install jupyter
+
+We will also use extensions.
+
+#use this if NOT using Anaconda
+~# pip3.6 install ipython jupyter jupyter_contrib_nbextensions
+
+Finally, do:
+~$ jupyter contrib nbextension install --user
+
+Run Jupyter Notebook
+
+Now we can run Jupyter Notebook:
+
+In terminal, do:
+# default port
+~$ jupyter notebook --port=8888
+
+Here, --port specifies which port we want to use. If it is taken, it will use the next available one (maybe 8889. We can open a new terminal window to run jupyter notebook --port=8888 and check the output.
+
+Now we can try out something in the notebook.
+
+====================
+-- install numpy and scipy
+====================
+
+sudo yum install numpy scipy
+
+sudo pip3.6 install matplotlib
+--Installing collected packages: numpy, pyparsing, kiwisolver, cycler, matplotlib
+Successfully installed cycler-0.10.0 kiwisolver-1.0.1 matplotlib-3.0.2 numpy-1.16.0 pyparsing-2.3.1
+
+sudo pip3.6 install scipy
+--Requirement already satisfied: numpy>=1.8.2 in /usr/lib64/python3.6/site-packages (from scipy) (1.16.0) 
+Installing collected packages: scipy
+Successfully installed scipy-1.2.0
+
+sudo pip3.6 install pandas sympy plotly
+-- Successfully installed mpmath-1.1.0 pandas-0.23.4 pytz-2018.9 sympy-1.3
+
+
+sudo yum install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+
+-- cache plotly web credential
+execu python code
+
+import plotly 
+plotly.tools.set_credentials_file(username='azknowesis', api_key='antdmN47mYfblKum47kS')
+
+-- The initialization step places a special .plotly/.credentials file in your home directory. 
+$ cat ~/.plotly/.credentials
+
+$ sudo pip3 install -U scikit-learn
+-- Successfully installed scikit-learn-0.20.2
+
+==================
+-- install Anaconda3
+==================
+
+$ cd /tmp
+- Python 3.5 (Anaconda 4.2.0) or Python 3.6 (Anaconda 5.2.0).
+$ curl -O https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
+
+- Use the sha256sum command to verify the script checksum:
+$ sha256sum Anaconda3-5.2.0-Linux-x86_64.sh
+$ md5sum Anaconda3-5.2.0-Linux-x86_64.sh
+
+- To start the Anaconda installation process run the installation script:
+$ bash Anaconda3-5.2.0-Linux-x86_64.sh
+
+- before install, mkdir. NO NEED TO MAKE DIR. installer will create dir /anaconda3
+###$ sudo mkdir -p /usr/local/share/
+- need to change permission to allow installer create dir
+$ sudo chmod a+rwx /usr/local/share
+
+To start the Anaconda installation process run the installation script:
+bash Anaconda3-5.3.1-Linux-x86_64.sh
+
+- specifiy a different install location
+/usr/local/share/anaconda3
+
+- make sure to add PATH to .bashrc
+
+- start anaconda
+anaconda-navigator
+
+
+- MAKE SURE Updating Anaconda, BEFORE starting anaconda
+
+- Updating the Anaconda is a pretty straight forward process, first update the conda tool with:
+$ conda update conda
+Copy
+
+- Once conda is updated, proceed with the Anaconda update:
+$ conda update anaconda
+
+Updating Anaconda
+
+Updating the Anaconda is a pretty straight forward process, first update the conda tool with:
+conda update conda
+Copy
+When prompted to confirm the update, type y to proceed.
+Once conda is updated, proceed with the Anaconda update:
+conda update anaconda
+
+
+
+
+====================
+-- set up virtualenvwrapper
+====================
+
+$ sudo pip3 install virtualenvwrapper
+
+-- set up Shell Startup File
+$ vi .bash_profile
+-- Add 3+2 lines to your shell startup file
+export PATH=/usr/bin:$PATH
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+
+-- add this line to ~/.bashrc file
+-- source /usr/bin/virtualenvwrapper.sh
+$ echo "source /usr/bin/virtualenvwrapper.sh" | tee -a ~/.bashrc
+
+
+-- source it. This command create bunch of dir.
+$ source .bash_profile
+$ source /usr/bin/virtualenvwrapper.sh
+
+--virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/premkproject
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/postmkproject
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/initialize
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/premkvirtualenv
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/postmkvirtualenv
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/prermvirtualenv
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/postrmvirtualenv
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/predeactivate
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/postdeactivate
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/preactivate
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/postactivate
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/get_env_details
+
+
+[azhang@localhost ~]$ workon
+[azhang@localhost ~]$ mkvirtualenv env1
+Using base prefix '/usr'
+New python executable in /home/azhang/.virtualenvs/env1/bin/python3.6
+Also creating executable in /home/azhang/.virtualenvs/env1/bin/python
+Installing setuptools, pip, wheel...
+done.
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/env1/bin/predeactivate
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/env1/bin/postdeactivate
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/env1/bin/preactivate
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/env1/bin/postactivate
+virtualenvwrapper.user_scripts creating /home/azhang/.virtualenvs/env1/bin/get_env_details
+
+
+$ workon env1
+
+$ deactivate
+
+-- create alias for deactivate
+$ echo "alias workoff='deactivate'" | tee -a ~/.bashrc
+$ source .bashrc
+
+-- check installed packages
+(env1)$ lssitepackages
+
+(env1) [azhang@localhost ~]$ echo $WORKON_HOME
+(env1) [azhang@localhost ~]$ ls $WORKON_HOME
+
+-- to check all installed packages
+$ pip3 list
+
+
+=============
+-- set up Jupyterhub in env1
+=============
+
+$ workon env1
+(env1) [azhang@localhost ~]$ pip3 list
+
+1. Install npm/nodejs (if needed)
+$ curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+$ sudo yum -y install nodejs
+(Installed:
+  nodejs.x86_64 2:10.15.0-1nodesource)
+
+2. Install proxy with npm 
+$ sudo npm install -g configurable-http-proxy
+(/usr/bin/configurable-http-proxy -> /usr/lib/node_modules/configurable-http-proxy/bin/configurable-http-proxy
++ configurable-http-proxy@4.0.1
+added 46 packages from 62 contributors in 3.119s)
+
+3. Install JupyterHub
+$ python3.6 -m pip install jupyterhub
+(Successfully installed Mako-1.0.7 SQLAlchemy-1.2.16 alembic-1.0.6 async-generator-1.10 certifi-2018.11.29 chardet-3.0.4 idna-2.8 jupyterhub-0.9.4 pamela-1.0.0 python-editor-1.0.3 python-oauth2-1.1.0 requests-2.21.0 urllib3-1.24.1)
+
+4. Install jupyter notebook
+$ python3.6 -m pip install notebook
+(Successfully installed MarkupSafe-1.1.0 Send2Trash-1.5.0 backcall-0.1.0 bleach-3.1.0 decorator-4.3.0 defusedxml-0.5.0 entrypoints-0.3 ipykernel-5.1.0 ipython-7.2.0 ipython-genutils-0.2.0 jedi-0.13.2 jinja2-2.10 jsonschema-2.6.0 jupyter-client-5.2.4 jupyter-core-4.4.0 mistune-0.8.4 nbconvert-5.4.0 nbformat-4.4.0 notebook-5.7.4 pandocfilters-1.4.2 parso-0.3.1 pexpect-4.6.0 pickleshare-0.7.5 prometheus-client-0.5.0 prompt-toolkit-2.0.7 ptyprocess-0.6.0 pygments-2.3.1 python-dateutil-2.7.5 pyzmq-17.1.2 six-1.12.0 terminado-0.8.1 testpath-0.4.2 tornado-5.1.1 traitlets-4.3.2 wcwidth-0.1.7 webencodings-0.5.1)
+
+5. Start Jupyterhub 
+$ sudo jupyterhub
+Visit https://localhost:8000 in your browser, and sign in with your unix credentials.
+Note: https is not working. need to set up ssl
+
+6. Create a configuration file in current folder and use the configuration file
+(jupyterhub --generate-config)
+$ jupyterhub --generate-config -f /home/azhang/.virtualenvs/env1/etc/jupyterhub/jupyterhub_config.py
+
+
+##7. To start the Hub on a specific url and port 10.0.1.2:443 with https:not done
+##$ jupyterhub --ip 10.0.1.2 --port 443 --ssl-key my_ssl.key --ssl-cert my_ssl.cert
+
+8. 
+
