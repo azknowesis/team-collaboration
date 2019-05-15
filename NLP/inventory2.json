@@ -1,0 +1,6 @@
+{"_id":{"oid":"5cd47583713ae04c38849a4d"},"item":"canvas","qty":100.0,"tags":["cotton"],"size":{"h":28.0,"w":35.5,"uom":"cm"}}
+{"_id":{"oid":"5cd47abed0f064cdbc39d38e"},"item":"journal","qty":25,"size":{"h":14,"w":21,"uom":"cm"},"status":"A"}
+{"_id":{"oid":"5cd47d27d0f064cdbc39d38f"},"item":"notebook","qty":50,"size":{"h":8.5,"w":11,"uom":"in"},"status":"A"}
+{"_id":{"oid":"5cd47d27d0f064cdbc39d390"},"item":"paper","qty":100,"size":{"h":8.5,"w":11,"uom":"in"},"status":"D"}
+{"_id":{"oid":"5cd47d27d0f064cdbc39d391"},"item":"planner","qty":75,"size":{"h":22.85,"w":30,"uom":"cm"},"status":"D"}
+{"_id":{"oid":"5cd47d27d0f064cdbc39d392"},"item":"postcard","qty":45,"size":{"h":10,"w":15.25,"uom":"cm"},"status":"A"}
