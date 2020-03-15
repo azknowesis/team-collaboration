@@ -1,0 +1,54 @@
+Comments: ''
+Direction: ''
+Lex: contact
+Regex: ''
+Type: EVIDENCE_OF_CONTACTLENS
+---
+Comments: ''
+Direction: ''
+Lex: contact with
+Regex: ''
+Type: Exclusion
+---
+Comments: ''
+Direction: ''
+Lex: bandage cl
+Regex: ''
+Type: Exclusion
+---
+Comments: ''
+Direction: ''
+Lex: contact lenses
+Regex: contact (lens|lense|lenses|lenes|len)
+Type: EVIDENCE_OF_CONTACTLENS
+---
+Comments: ''
+Direction: ''
+Lex: contact lens
+Regex: ''
+Type: EVIDENCE_OF_CONTACTLENS
+---
+Comments: ''
+Direction: ''
+Lex: contacts
+Regex: ''
+Type: EVIDENCE_OF_CONTACTLENS
+---
+Comments: ''
+Direction: ''
+Lex: contactlens
+Regex: ''
+Type: EVIDENCE_OF_CONTACTLENS
+---
+Comments: ''
+Direction: ''
+Lex: cl
+Regex: ''
+Type: EVIDENCE_OF_CONTACTLENS
+---
+Comments: ''
+Direction: ''
+Lex: cls
+Regex: ''
+Type: EVIDENCE_OF_CONTACTLENS
+
